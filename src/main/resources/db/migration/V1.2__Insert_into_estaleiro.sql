@@ -1,0 +1,10 @@
+insert into estaleiro (name) values ('Sete quedas');
+insert into estaleiro (name) values ('Águas claras');
+insert into estaleiro (name) values ('Olímpia');
+insert into estaleiro (name) values ('Píer 47');
+insert into estaleiro (name) values ('Estaleiro 99');
+insert into estaleiro (name) values ('Palácios Ancoragens');
+insert into estaleiro (name) values ('Morumbi');
+insert into estaleiro (name) values ('Mooca');
+insert into estaleiro (name) values ('Itaim bibi');
+insert into estaleiro (name) values ('Jardins');
