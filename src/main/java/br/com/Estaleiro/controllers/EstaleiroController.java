@@ -28,7 +28,7 @@ public class EstaleiroController
     private EstaleiroService service;
 
     @PostMapping
-    @Operation(summary = "Persists a new Customer in database", tags = {"Customers"}, responses = {
+    @Operation(summary = "Persists a new Estaleiro in database", tags = {"Estaleiros"}, responses = {
             @ApiResponse(description = "Success!", responseCode = "200", content = {
                     @Content(mediaType = "application/json",
                             schema = @Schema(implementation = EstaleiroDTO.class))
@@ -39,7 +39,7 @@ public class EstaleiroController
     }
 
     @GetMapping("/{id}")
-    @Operation(summary = "Find a Customer using the ID", tags = {"Customers"}, responses = {
+    @Operation(summary = "Find a Estaleiro using the ID", tags = {"Estaleiros"}, responses = {
             @ApiResponse(description = "Success!", responseCode = "200", content = {
                     @Content(mediaType = "application/json", schema =
                     @Schema(implementation = EstaleiroDTO.class)
@@ -67,12 +67,12 @@ public class EstaleiroController
 
         Pageable pageable = PageRequest.of(page, size, Sort.by(sortDirection, "name"));
 
-        Page<EstaleiroDTO> customers = service.findAll(pageable);
+        Page<EstaleiroDTO> Estaleiros = service.findAll(pageable);
 
-        for (EstaleiroDTO customer:customers){
-            buildEntityLink(customer);
+        for (EstaleiroDTO Estaleiro:Estaleiros){
+            buildEntityLink(Estaleiro);
         }
-        return new ResponseEntity(assembler.toModel(customers), HttpStatus.OK);
+        return new ResponseEntity(assembler.toModel(Estaleiros), HttpStatus.OK);
     }
 
     @GetMapping("/find")
@@ -87,12 +87,12 @@ public class EstaleiroController
 
         Pageable pageable = PageRequest.of(page, size, Sort.by(sortDirection, "name"));
 
-        Page<EstaleiroDTO> customers = service.findByName(name, pageable);
+        Page<EstaleiroDTO> Estaleiros = service.findByName(name, pageable);
 
-        for (EstaleiroDTO customer:customers){
-            buildEntityLink(customer);
+        for (EstaleiroDTO Estaleiro:Estaleiros){
+            buildEntityLink(Estaleiro);
         }
-        return new ResponseEntity(assembler.toModel(customers), HttpStatus.OK);
+        return new ResponseEntity(assembler.toModel(Estaleiros), HttpStatus.OK);
     }
 
     @PutMapping
